@@ -1,0 +1,40 @@
+
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <title>Registro de Selecciones</title>
+</head>
+<body>
+    <section class="d-flex justify-content-center mt-3">
+        <div class="card col-sm-6 p-3">
+        <div class="mb-3">
+            <h4>Selecciones</h4>
+        </div>
+        <form th:action="@{/guardar}" th:object=${seleccion}  method = "post">
+            <div class="mb-2">
+                <label for="id">Id</label>
+                <input type="text"class="form-control" name="id" th:field="*{id}" placeholder="">
+            </div>
+            <div class="mb-2">
+                <label for="nombre">Nombre</label>
+                <input type="text"class="form-control" name="nombre" th:field="*{nombre}" placeholder="">
+            </div>
+            <div class="mb-2">
+                <label for="continente">Continente</label>
+                <input type="text"class="form-control" name="continente" th:field="*{seleccion.continente.nombre}"  placeholder="">
+            </div>
+            <div class="mb-2">
+                <label for="grupo">Grupo</label>
+                <input type="text"class="form-control" name="grupo" th:field="*{grupo}" placeholder="">
+            </div>
+            <div class="mb-2">
+                <input type="submit" value="guardar" class="btn btn-success" >
+            </div>
+        </div>
+        </form>
+    </section>
+</body>
+</html>

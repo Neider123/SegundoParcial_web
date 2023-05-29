@@ -32,13 +32,14 @@ public class SeleccionController {
 		return "index";
 	}
     
-	/**
+	
 	@GetMapping("/new")
 	public String agregar(Model model) {
 		Seleccion seleccion = new Seleccion();
 	    model.addAttribute("seleccion",seleccion);
 		return "NuevaSeleccion";
 	}
+	
 	
 	//@RequestMapping(value = "/categoria/guardar", method = RequestMethod.POST)
 	@PostMapping("/guardar")
@@ -73,7 +74,7 @@ public class SeleccionController {
 
 		return null;
 	}
-	*/
+	
 	
 
 
