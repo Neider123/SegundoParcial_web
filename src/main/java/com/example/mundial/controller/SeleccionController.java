@@ -32,7 +32,7 @@ public class SeleccionController {
 		return "index";
 	}
     
-	
+	/**
 	@GetMapping("/new")
 	public String agregar(Model model) {
 		Seleccion seleccion = new Seleccion();
@@ -73,6 +73,7 @@ public class SeleccionController {
 
 		return null;
 	}
+	*/
 	
 
 

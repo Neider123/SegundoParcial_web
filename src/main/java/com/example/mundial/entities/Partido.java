@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,15 +25,9 @@ public class Partido implements Serializable {
 	@SequenceGenerator(name="partido_id_seq",allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "partido_id_seq")
 	private Integer id;
-	private String fecha;
+	private Date fecha;
 	
 	@ManyToOne
 	@JoinColumn(name="estadio_id")
 	private Estadio estadio;
-	@JsonIgnore
-	@OneToMany(mappedBy = "partido")
-	private List<Resultado>resultados;
-	
-	
-
 }

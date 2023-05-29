@@ -3,6 +3,8 @@ package com.example.mundial.entities;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,14 +16,16 @@ import lombok.Data;
 @Data
 @Entity
 public class Estadio implements Serializable{
+
 	@Id
 	@SequenceGenerator(name="estadio_id_seq",allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "estadio_id_seq")
 	private Integer id;
 	private String nombre;
-	private Integer capacidad;
+	private String capacidad;
 	
-	
-	@OneToMany(mappedBy = "estadio")
+	@JsonIgnore
+	@OneToMany(mappedBy="estadio")
 	private List<Partido> partidos;
+	
 }
