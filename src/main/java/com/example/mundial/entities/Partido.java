@@ -1,5 +1,6 @@
 package com.example.mundial.entities;
 
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.List;
 
@@ -17,21 +18,21 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Partido {
+public class Partido implements Serializable {
 	
 	@Id
 	@SequenceGenerator(name="partido_id_seq",allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "partido_id_seq")
 	private Integer id;
-	private Date fecha;
-	/**
+	private String fecha;
+	
 	@ManyToOne
 	@JoinColumn(name="estadio_id")
 	private Estadio estadio;
 	@JsonIgnore
 	@OneToMany(mappedBy = "partido")
 	private List<Resultado>resultados;
-	**/
+	
 	
 
 }
