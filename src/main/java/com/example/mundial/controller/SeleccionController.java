@@ -31,6 +31,13 @@ public class SeleccionController {
 		model.addAttribute("selecciones",selecciones);
 		return "index";
 	}
+	
+	@GetMapping("/grupo/{grupo}")
+	public String seleccionByGrupo(@PathVariable String grupo,Model model){
+		List<Seleccion> selecciones = seleccionRepository.findByGrupo(grupo);
+		model.addAttribute("selecciones",selecciones);
+		return "index";
+	}
     
 	
 	@GetMapping("/new")
@@ -43,7 +50,7 @@ public class SeleccionController {
 	
 	//@RequestMapping(value = "/categoria/guardar", method = RequestMethod.POST)
 	@PostMapping("/guardar")
-	public String guardarCategoria(@ModelAttribute("categoria") Seleccion seleccion) {
+	public String guardarSeleccion(@ModelAttribute("seleccion") Seleccion seleccion) {
 	    seleccionRepository.save(seleccion);
 	    return "redirect:/listar";
 	}

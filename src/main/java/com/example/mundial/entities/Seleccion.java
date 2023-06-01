@@ -34,4 +34,7 @@ public class Seleccion implements Serializable {
 	*/
 	private String grupo;
 
+	
+	
+
 }
