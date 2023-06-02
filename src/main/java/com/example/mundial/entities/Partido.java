@@ -30,4 +30,8 @@ public class Partido implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="estadio_id")
 	private Estadio estadio;
+	
+	@JsonIgnore
+	@OneToMany(mappedBy="partido")
+	private List<Resultado> resultados;
 }

@@ -47,8 +47,10 @@ public class SeleccionController {
 	@GetMapping("/new")
 	public String agregar(Model model) {
 		Seleccion seleccion = new Seleccion();
+		/**
 		List<Continente> continentes = continenteRepository.findAll();
 	    model.addAttribute("continentes", continentes);
+	    */
 	    model.addAttribute("seleccion",seleccion);
 		return "NuevaSeleccion";
 	}
@@ -78,15 +80,11 @@ public class SeleccionController {
 	}
 	
 	
-	@GetMapping("/{id}")
-	public String categoriaById(@PathVariable Integer id) {
-		Optional<Seleccion> categoria = seleccionRepository.findById(id);
-
-		if (categoria.isPresent()) {
-			return categoria.get().getNombre();
-		}
-
-		return null;
+	@GetMapping("selecciones/{id}")
+	public String categoriaById(@PathVariable Integer id,Model model) {
+		Optional<Seleccion> seleccion = seleccionRepository.findById(id);
+		model.addAttribute("selecciones",seleccion);
+		return "index";
 	}
 	
 	

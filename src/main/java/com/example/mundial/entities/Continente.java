@@ -22,7 +22,6 @@ public class Continente implements Serializable {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "continente_id_seq")
 	private String id;
 	private String nombre;
-	
 	@JsonIgnore
 	@OneToMany(mappedBy="continente")
 	private List<Seleccion> selecciones;

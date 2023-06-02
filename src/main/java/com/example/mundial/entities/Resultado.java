@@ -20,10 +20,12 @@ public class Resultado implements Serializable {
 	@SequenceGenerator(name="resultado_id_seq",allocationSize = 1)
 	@GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "resultado_id_seq")
 	private Integer id;	
-	@Column(name="partido_id")
-	private Integer partido;
-	@Column(name="seleccion_id")
-	private Integer seleccionId;
+	@ManyToOne
+	@JoinColumn(name="partido_id")
+	private Partido partido;
+	@ManyToOne
+	@JoinColumn(name="seleccion_id")
+	private Seleccion seleccion;
 	private Integer goles;
 	private Integer amarillas;
 	private Integer rojas;

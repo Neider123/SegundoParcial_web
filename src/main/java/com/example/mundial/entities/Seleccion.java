@@ -27,11 +27,9 @@ public class Seleccion implements Serializable {
 	@ManyToOne
 	@JoinColumn(name="continente_id")
 	private Continente continente;
-	/**
 	@JsonIgnore
 	@OneToMany(mappedBy="seleccion")
 	private List<Resultado> resultados;
-	*/
 	private String grupo;
 
 	

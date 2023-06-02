@@ -13,12 +13,19 @@
       <img src="https://caracoltv.brightspotcdn.com/dims4/default/c59650e/2147483647/strip/true/crop/640x425+0+0/resize/640x425!/quality/90/?url=https%3A%2F%2Fcaracol-brightspot.s3-us-west-2.amazonaws.com%2Fassets%2Fgol%2Fcatar_e.jpg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
       Copa Mundial de Futbol
     </a>
+    <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" th:href="@{/partidos}">Ver Resultados</a>
+  </li>
+</ul>
   </div>
 </nav>
 
 <h1 class="text-center mt-3">Listado de Selecciones</h1>
 <div class="container mt-4">
 <a th:href="@{new}" class="btn btn-success m-3">Nuevo</a>
+<a th:href="@{/partidos/verResultados/1}"class= "btn btn-primary">Ver resultados</a>
+
 <br><br>
 <table class="table">
 <thead>
