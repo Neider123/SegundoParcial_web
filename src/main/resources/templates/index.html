@@ -25,7 +25,6 @@
 <tr>
 <td>Id</td>
 <td>Nombre</td>
-<td>Continente</td>
 <td>Grupo<td>
 <td>Acciones</td>
 </tr>
@@ -34,7 +33,6 @@
 <tr th:each="seleccion: ${selecciones}">
 <td th:text="${seleccion.id}"></td>
 <td th:text="${seleccion.nombre}"></td>
-<td th:text="${seleccion.continente.nombre}"></td>
 <td th:text="${seleccion.grupo}"></td>
 <td>
 <a th:href="@{/editar/} + ${seleccion.id} " class= "btn btn-warning">Editar</a>

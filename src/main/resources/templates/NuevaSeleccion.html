@@ -20,8 +20,13 @@
                 <input type="text" class="form-control" name="nombre" th:field="*{nombre}" placeholder="">
             </div>
             <div class="mb-2">
-                <label for="continente">Continente</label>
-                <input type="text" class="form-control" name="continente" th:field="*{continente.nombre}" placeholder="">
+               <select th:field="*{continente}">
+        <option value="">Selecciona un continente</option>
+        <option th:each="continente : ${continentes}" 
+                th:value="${continente.id}"
+                th:text="${continente.nombre}"></option>
+    </select>
+               
             </div>
             <div class="mb-2">
                 <label for="grupo">Grupo</label>
